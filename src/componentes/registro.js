@@ -31,7 +31,7 @@ export class Registro extends Component {
   render() {
     
     //  /*
-    console.log("gAS"+this.state.usuarioId+ " : "+ this.state.correoU + 
+    console.log("Usuario: "+this.state.usuarioId+ " : "+ this.state.correoU + 
     " + " + this.state.contraseña)
     if(this.state.usuarioId !== 0){
         return(<App usuario = {this.state.usuarioId} 

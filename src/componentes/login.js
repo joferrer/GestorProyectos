@@ -41,7 +41,7 @@ export class Login extends Component {
   render() {
     
     //  /*
-    console.log("gAS"+this.state.usuarioId+ " : "+ this.state.correoU + 
+    console.log("Usuario login: "+this.state.usuarioId+ " : "+ this.state.correoU + 
     " + " + this.state.contraseña)
     if(this.state.usuarioId !== 0){
         return(<App usuario = {this.state.usuarioId} 
