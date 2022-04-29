@@ -2,29 +2,19 @@ import React, { Component } from 'react'
 import '../styles/login.css'
 import iconmail from '../img/icons/mail.png'
 import contra from '../img/icons/cerrar-con-llave.png'
+import usuarioicon from '../img/icons/usuario.png'
 import App from '../App';
-import Registro from './registro';
 
-export class Login extends Component {
+export class Registro extends Component {
     constructor(props){
         super(props);
         this.logearse = this.logearse.bind(this);
-        this.registrarse = this.registrarse.bind(this);
         this.state = {
-            registrado:1, // 1 -> Si : 0-> NO
             usuarioId : 0,
             correoU: '',
             contraseña:''
         }
         
-    }
-    registrarse(){
-        if(this.state.registrado ===1){
-            this.setState({
-                registrado : 0
-            })
-            
-        }
     }
     
     logearse(){
@@ -50,27 +40,27 @@ export class Login extends Component {
         
     }//*/
     
-    
-    if(this.state.registrado ===0 ){
-        return <Registro/>
-    }
     return (
         
         <section className='form-login'>
             <div className="login">
                 <form action="" method="get">
-                    <label for="id">
+                <label for="nombre">
+                        <span><img className="icon" src={usuarioicon} alt=""/></span>
+                        <input type="name" name="nombre" id="nombre" required />
+                    </label>
+                    <label for="email">
                         <span><img className="icon" src={iconmail} alt=""/></span>
-                        <input type="email" name="id" id="id" required />
+                        <input type="email" name="email" id="email" required />
                     </label>
                     <label for="contraseña">
                         <span><img className="icon" src={contra} alt=""/></span>
                      <input type="password" name="constraseña" id="contraseña" required />
                     </label>
-                    <input type="button" value="Ingresar" 
+                    <input type="button" value="Registrar" 
                     onClick={()=>this.logearse()} />
                 </form>
-        <button onClick={()=>this.registrarse()}>Registrarse</button>
+        
     </div>
         </section>
         
@@ -78,4 +68,4 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+export default Registro;
